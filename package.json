@@ -1,0 +1,20 @@
+{
+  "name": "tarea-clase-12",
+  "version": "1.0.0",
+  "description": "## Construir una interfaz para https://exchangeratesapi.io/",
+  "main": "exchange-house.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "empezar": "http-server -c-1",
+    "cy:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.0"
+  }
+}
