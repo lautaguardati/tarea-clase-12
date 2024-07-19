@@ -73,6 +73,7 @@ function limpiarPokemonSeleccionado() {
 
 function mostrarCaracteristicas(caracteristicas) {
     mostrarNombre(caracteristicas.name);
+    mostrarImagen(caracteristicas.sprites.front_default);
     mostrarHabilidades(caracteristicas.abilities);
     mostrarExperiencia(caracteristicas.base_experience);
     mostrarAltura(caracteristicas.height);
@@ -88,6 +89,16 @@ function mostrarNombre(nombre) {
     $nombrePokemon.appendChild(document.createElement('br'));
 }
 
+function mostrarImagen(imagen) {
+    fetch(imagen)
+        .then(respuesta => respuesta.blob())
+        .then((myBlob) => {
+            const $myImage = document.createElement('img');
+            const objectURL = URL.createObjectURL(myBlob);
+            $myImage.src = objectURL;
+            document.querySelector("#nombre-pokemon").appendChild($myImage);
+        })
+}
 
 function mostrarHabilidades(habilidades) {
     const $nodoHabilidades = document.createElement('p');
