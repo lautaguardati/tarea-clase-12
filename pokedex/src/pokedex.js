@@ -46,3 +46,27 @@ function mostrarListaDePokemones(nombreDePokemones) {
     })
 }
 
+
+
+document.querySelector('#pagina-siguiente').onclick = pasarAPaginaSiguiente;
+document.querySelector('#pagina-anterior').onclick = pasarAPaginaAnterior;
+
+function pasarAPaginaSiguiente(e) {
+    fetch(respuestaListaDePokemones.next)
+        .then(respuesta => respuesta.json())
+        .then((respuesta) => {
+            respuestaListaDePokemones = respuesta
+            let nombreDePokemones = obtenerNombreDePokemones(respuesta.results);
+            mostrarListaDePokemones(nombreDePokemones);
+        })
+}
+
+function pasarAPaginaAnterior() {
+    fetch(respuestaListaDePokemones.previous)
+        .then(respuesta => respuesta.json())
+        .then((respuesta) => {
+            respuestaListaDePokemones = respuesta
+            let nombreDePokemones = obtenerNombreDePokemones(respuesta.results);
+            mostrarListaDePokemones(nombreDePokemones);
+        })
+}
