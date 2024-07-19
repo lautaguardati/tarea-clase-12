@@ -44,8 +44,35 @@ function mostrarListaDePokemones(nombreDePokemones) {
 
         document.querySelector("#lista-de-pokemons").appendChild($itemPokemon);
     })
+    permitirEleccionPokemon();
 }
 
+function permitirEleccionPokemon() {
+    document.querySelectorAll('#lista-de-pokemons div').forEach(($pokemon) => {
+        $pokemon.onclick = buscarInformacionDePokemon;
+    })
+}
+
+function buscarInformacionDePokemon(e) {
+    limpiarPokemonSeleccionado();
+
+    const idPokemonSeleccionado = e.target.id.replace(/[a-z]i+/, "");
+    const PokemonSeleccionado = (parseFloat(idPokemonSeleccionado));
+
+    fetch(linkDePokemones[PokemonSeleccionado])
+        .then(respuesta => respuesta.json())
+        .then((respuesta) => {
+            mostrarCaracteristicas(respuesta);
+        })
+}
+
+function limpiarPokemonSeleccionado() {
+    $pokemonSeleccionado.textContent = "";
+}
+
+
+function mostrarCaracteristicas(caracteristicas) {
+}
 
 
 document.querySelector('#pagina-siguiente').onclick = pasarAPaginaSiguiente;
