@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(33, 33, 33);
+}
+
+.display-h1 {
+    color: rgb(255, 255, 255);
+    background-color: rgb(110, 44, 243);
+    border-radius: 2em;
+    width: 25%;
+    padding: 0.3em;
+    margin-top: 0.1em;
+    margin-left: 0.1em;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+#resultados{
+    color:rgb(200, 200, 200)
+}
