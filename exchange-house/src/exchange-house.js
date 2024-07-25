@@ -24,7 +24,6 @@ function mostrarIformacionDeCambios(data) {
 }
 
 function mostrarValoresCambiarios(cambios) {
-    console.log(cambios)
     for (const [key, value] of Object.entries(cambios)) {
         const $cambio = document.createElement('li')
         $cambio.textContent = `${key}: ${value}`;
