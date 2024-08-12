@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Casa de Cambio</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../exchange-house/src/exchange-house.css'>
 </head>
-<body>
-    <h1>Exchange House</h1>
 
+<body>
+    <div class="text-center">
+        <div class="justify-items-start">
+            <h1 class="display-h1">Casa de Cambio</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <form class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-12">
+                        <label class="visually-hidden" for="fecha"></label>
+                        <div class="input-group">
+                            <div class="input-group-text">Fecha</div>
+                            <input id="fecha" type="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="visually-hidden" for="base"></label>
+                        <select id="base" class="form-select">
+                            <option selected>Moneda</option>
+                            <option value="AUD">Dolar Australiano</option>
+                            <option value="BGN">Lev</option>
+                            <option value="BRL">Real Brasileño</option>
+                            <option value="CAD">Dolar Canadiense</option>
+                            <option value="CHF">Franco Suizo</option>
+                            <option value="CNY">Yuan Chino</option>
+                            <option value="CZK">Corona Checa</option>
+                            <option value="DKK">Corona Danesa</option>
+                            <option value="GBP">Libra Esterlina</option>
+                            <option value="HKD">Dolar de Honk Kong</option>
+                            <option value="HUF">Forinto Húngaro</option>
+                            <option value="IDR">Rupia Indonesa</option>
+                            <option value="ILS">Nuevo Séquel</option>
+                            <option value="INR">Rupia India</option>
+                            <option value="ISK">Corona Islandesa</option>
+                            <option value="JPY">Yen Japones</option>
+                            <option value="KRW">Won Surcoreano</option>
+                            <option value="MXN">Peso Mexicano</option>
+                            <option value="MYR">Ringgit Malasio</option>
+                            <option value="NOK">Corona Noruega</option>
+                            <option value="NZD">Dólar Neozelandés</option>
+                            <option value="PHP">Peso Filipino</option>
+                            <option value="PLN">Zloty Polaca</option>
+                            <option value="RON">Leu Rumano</option>
+                            <option value="SEK">Corona Sueca</option>
+                            <option value="SGD">Dolar de Singapur</option>
+                            <option value="THB">Baht tailandés</option>
+                            <option value="TRY">Lira Turca</option>
+                            <option value="USD">Dólar Estadounidense</option>
+                            <option value="ZAR">Rand Sudafricano</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button id="boton-ver-cambios" type="button" class="btn btn-primary">Ver cambios</button>
+                    </div>
+                </form>
+
+            </div>
+            <div id="resultados" class="col-md-7" hidden>
+                <div>Cambios en base <span id="base-cambios"></span> para la fecha <span id="fecha-cambios"></span>
+                </div>
+                <div>
+                    <ul id="cambios">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src='../exchange-house/src/exchange-house.js'></script>
 </body>
+
 </html>

@@ -1,0 +1,32 @@
+* {
+    background-color: rgb(125, 196, 190);
+}
+
+#header {
+    background-color: rgb(238, 83, 79);
+    margin-top: 0em;
+}
+
+#pokedex-icono {
+    height: 4em;
+    display: inline-flex;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#contenedor{
+    font-size: large;
+    text-transform: capitalize;
+}
+
+#pokemon-seleccionado{
+    text-transform: capitalize;
+}
+
+#barra-de-navegacion{
+    position: fixed; 
+    bottom: 0%;
+    width: 100vw;
+}
